@@ -1,0 +1,36 @@
+1. database
+	- create database di phpmysql
+	- configure .env
+	- configure config/database.php
+		samakan host antara .env dan config/database.php
+2. migration
+	- membuat migrasi baru
+		php artisan make:migration create_task_table --create=tasks //nama table
+	- cek database/migrations/namatable
+		edit atribute table
+	- php artisan migrate
+		cek kolom pada database 'tasks' di phpmyadmin untuk memastikan table telah terbuat
+3. buat model (untuk merepresentasikan database)
+	- php artisan make:model Task
+		nama model sama dengan nama tabel, diawali dengan huruf besar
+	- cek app
+		- masuk ke nama model yang baru di buat, yaitu Task
+		- konfigurasi
+4. buat controller
+	- buat dua controller
+		php artisan make:controller PagesController
+		php artisan make:controller TasksController
+	- cek app/Http/Controllers
+		pada PagesController buat fungsi home
+	- buka app/Http/routes.php
+		untuk mengarahkan tampilan, dengan menjalankan fungsi home yang telah dibuat
+5. download bootstrap
+	- composer require twbs/bootstrap
+	- cek folder vendor/twbs/bootstrap/dist
+	- copy
+	- buat folder di public
+		components
+	- buat folder di components
+		bootstrap
+	- paste di public/components/bootstrap
+6. buat master page di folder layout
